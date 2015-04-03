@@ -1,0 +1,328 @@
+/*
+ * Variables
+ */
+@font-family: 'Open Sans', sans-serif;
+@black: #000;
+@white: #fff;
+
+/*
+ * Styling
+ */
+.popbounce-modal {
+  font-family: @font-family;
+  display: none;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  &.underlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+  }
+
+  .popbounce-modal-sub {
+    display: block;
+    position: relative;
+    cursor: default;
+    top: 50%;
+    left: initial;
+    opacity: 1;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    max-width: 95%;
+    max-height: 95%;
+    width: 75%;
+    background-color: #f0f1f2;
+    z-index: 21;
+    margin: auto;
+    border-radius: 4px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .close-btn {
+      display: none;
+    }
+  }
+
+  .popbounce-modal-sub.full {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+
+    .modal-body {
+      padding: 60px;
+    }
+
+    .close-btn {
+      font-size: 35px;
+      padding: 1px 10px 8px 10px;
+      line-height: 30px;
+      border: 3px solid #344a5f;
+      color: #344a5f;
+      border-radius: 50%;
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+  }
+
+  .modal-title {
+    font-size: 18px;
+    background-color: #252525;
+    color: @white;
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+  }
+
+  .modal-body {
+    padding: 20px 10px;
+    font-size: 0.9em;
+
+    &:before,
+    &:after {
+      content: " ";
+      display: table;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    .popbounce-img {
+      display: inline-block;
+      width: 30%;
+      float: left;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .popbounce-content {
+      float: left;
+      display: inline-block;
+      width: 70%;
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: left;
+      color: #333;
+
+      h3 {
+        font-size: 40px;
+        line-height: 1em;
+        margin: 0 0 10px 0;
+        color: #333;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 19px;
+        line-height: 1.4em;
+      }
+
+      .more-link {
+        font-size: 25px;
+        padding: 10px 15px;
+        color: #fff !important;
+
+        span {
+          font-weight: normal;
+          font-size: 55%;
+        }
+      }
+    }
+  }
+
+  h3 {
+    color: @white;
+    font-size: 1em;
+    margin: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 1.25em;
+    margin: 10px 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    line-height: 1.4em;
+    color: #344a5f;
+  }
+
+  form {
+    text-align: center;
+    margin-top: 35px;
+
+    p {
+      text-align: left;
+      margin-left: 35px;
+      opacity: 0.8;
+      margin-top: 1px;
+      padding-top: 1px;
+      font-size: 0.9em;
+    }
+
+    input[type=email] {
+      color: #999;
+      padding: 12px;
+      font-size: 15px;
+      width: 300px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    input[type=text] {
+      padding: 12px;
+      font-size: 1.2em;
+      width: 300px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    input[type=submit] {
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 12px;
+      font-size: 14px;
+      border-radius: 4px;
+      color: @white;
+      background: #4ab471 none;
+      border: none;
+      cursor: pointer;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  .byline, .updated {
+    display: block;
+  }
+
+  .modal-footer {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0 20px;
+
+    p {
+      text-transform: capitalize;
+      cursor: pointer;
+      display: inline;
+      border-bottom: 1px solid #344a5f;
+    }
+  }
+}
+
+/*
+ * Fixes for users with visible admin bar
+ */
+.admin-bar {
+  .popbounce-modal {
+    padding-top: 32px;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

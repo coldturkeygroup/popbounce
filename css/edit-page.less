@@ -1,0 +1,32 @@
+th#popbounce {
+  width: 65px;
+}
+
+.popbounce-status {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #ccc;
+  line-height: 16px;
+  margin-left: 6px;
+
+  &.default {
+    background-color: #ccc;
+  }
+
+  &.on {
+    background-color: #009000;
+  }
+
+  &.off {
+    background-color: #ff9900;
+  }
+}
+
+.column-popbounce {
+  @media screen and (max-width: 782px) {
+    display: none;
+  }
+}
