@@ -15,7 +15,6 @@ class Popbounce_Meta {
 	public function __construct()
 	{
 		$this->init_meta_boxes();
-		$this->init_post_columns();
 	}
 
 	/**
@@ -87,82 +86,6 @@ class Popbounce_Meta {
 		if ( isset( $_POST[ $select_name ] ) )
 			update_post_meta( $post_id, $select_name, esc_attr( $_POST[ $select_name ] ) );
 	}
-
-
-	/**
-	 * Add custom column for posts and pages tables
-	 */
-	function init_post_columns()
-	{
-		$screens = [ 'posts', 'pages' ];
-
-		foreach ( $screens as $screen ) {
-			add_filter( 'manage_' . $screen . '_columns', [ $this, 'add_post_columns' ] );
-			add_action( 'manage_' . $screen . '_custom_column', [ $this, 'render_post_columns' ], 10, 2 );
-		}
-
-		add_action( 'admin_footer', [ $this, 'post_columns_css' ] );
-	}
-
-	/**
-	 * Add the defined custom column
-	 *
-	 * @param $columns
-	 *
-	 * @return mixed
-	 */
-	function add_post_columns( $columns )
-	{
-		$columns['popbounce'] = 'popBounce';
-
-		return $columns;
-	}
-
-	/**
-	 * Render our custom column
-	 *
-	 * @param $column_name
-	 * @param $id
-	 */
-	function render_post_columns( $column_name, $id )
-	{
-		$select_name      = $this->select_name;
-		$popbounce_status = 'default';
-		$popbounce_title  = 'Default';
-
-		switch ( $column_name ) {
-			case 'popbounce':
-				$widget_id = get_post_meta( $id, $select_name, true );
-
-				if ( $widget_id ) {
-					$get_post_custom = get_post_meta( $id, $select_name, true );
-					switch ( $get_post_custom ) {
-						case 'on' :
-							$popbounce_status = 'on';
-							$popbounce_title  = 'On';
-							break;
-						case 'off' :
-							$popbounce_status = 'off';
-							$popbounce_title  = 'Off';
-							break;
-					}
-				}
-
-				echo '<div title="' . $popbounce_title . '" class="popbounce-status ' . $popbounce_status . '"></div>';
-		}
-	}
-
-	/**
-	 * Define the CSS for our custom column
-	 */
-	function post_columns_css()
-	{
-		$screen = get_current_screen();
-		if ( $screen->base == 'edit' ) {
-			wp_enqueue_style( 'popbounce-edit-page', plugins_url( '../css/min/edit-page.css', __FILE__ ) );
-		}
-	}
-
 }
 
 new Popbounce_Meta();
