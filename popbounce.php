@@ -3,7 +3,7 @@
 Plugin Name: popBounce
 Plugin URI: http://coldturkeygroup.com/
 Description: popBounce is a WordPress plugin build on ouiBounce to help increase conversion rates.
-Version: 1.0
+Version: 1.0.1
 Author: Cold Turkey Group
 Author URI: http://coldturkeygroup.com/
 Text Domain: popbounce
@@ -13,7 +13,7 @@ if ( ! defined( 'POPBOUNCE_OPTION_KEY' ) )
 	define( 'POPBOUNCE_OPTION_KEY', 'popbounce' );
 
 if ( ! defined( 'POPBOUNCE_VERSION_NUM' ) )
-	define( 'POPBOUNCE_VERSION_NUM', '1.0' );
+	define( 'POPBOUNCE_VERSION_NUM', '1.0.1' );
 
 if ( ! defined( 'POPBOUNCE_VERSION_KEY' ) )
 	define( 'POPBOUNCE_VERSION_KEY', POPBOUNCE_OPTION_KEY . '_version' );
