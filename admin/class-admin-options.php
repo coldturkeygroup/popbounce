@@ -88,7 +88,7 @@ class Popbounce_Admin_Options {
 		$example = "<p>Paragraph</p>\n\n<form>\n<input type=\"email\" placeholder=\"you@email.com\">\n<input type=\"submit\" value=\"learn more\">\n<p class=\"form-notice\">*this is a fake form</p>\n</form>";
 		?>
 		<div class="wrap">
-			<h2>Exit Intent Ad Settings</h2>
+			<h1>Exit Intent Ad Settings</h1>
 
 			<?php do_action( POPBOUNCE_OPTION_KEY . '_settings_page_tabs_link_after' ); ?>
 

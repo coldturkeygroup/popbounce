@@ -3,7 +3,7 @@ Contributors: Aaron Huisinga
 Tags: exit popup, exit popups, ab-testing, roi, conversion, conversion rate optimisation, marketing, landing page
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 
 popBounce is an implementation of exit popup software for WordPress. This plugin is based on [Ouibounce](http://carlsednaoui.github.io/ouibounce/) by Carl Sednaoui.
 
